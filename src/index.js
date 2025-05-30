@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ThemeProvider } from '@emotion/react';
+import { getCustomTheme } from './customTheme';
+import { useState } from 'react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const theme = getCustomTheme("light");
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}><App /></ThemeProvider>
   </React.StrictMode>
 );
 
